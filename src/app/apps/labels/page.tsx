@@ -56,6 +56,24 @@ const highlights = [
   "Built for clearer buying decisions",
 ];
 
+const freePlanFeatures = [
+  "Free to install",
+  "Default low stock and urgent thresholds",
+  "Default Boostle label text",
+  "Starter launch colour palette",
+  "Powered by Boostle: Labels branding",
+  "Live preview of premium settings before upgrade",
+];
+
+const starterPlanFeatures = [
+  "Custom stock thresholds",
+  "Custom badge colours",
+  "Custom label text",
+  "Remove Boostle branding",
+  "Cleaner fit with your storefront theme",
+  "7-day trial, then $4.99/month USD",
+];
+
 export default function BoostleLabelsPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
@@ -89,7 +107,7 @@ export default function BoostleLabelsPage() {
                 href="https://apps.shopify.com/boostle-labels"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
+                className="rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-blue-700"
               >
                 Install on Shopify
               </a>
@@ -132,21 +150,24 @@ export default function BoostleLabelsPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+                <div className="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:shadow-lg">
                   <div className="relative aspect-[4/3] w-full bg-slate-100">
                     <Image
-                      src="\public\images\boostle-labels-demo.png"
+                      src="/images/boostle-labels-demo.png"
                       alt="Boostle Labels shown on a Shopify product page between the product price and add to cart button"
                       fill
-                      className="object-cover object-top"
+                      className="object-contain bg-white"
                       priority
                     />
                   </div>
                 </div>
 
                 <p className="mt-6 text-sm leading-6 text-slate-600">
-                  This is the key placement: price first, urgency second, buy
-                  action immediately after.
+                  Real Shopify storefront example using Boostle: Labels.
+                  <br />
+                  <span className="text-slate-500">
+                    No theme hacks. No clutter. Just clean urgency.
+                  </span>
                 </p>
               </div>
             </div>
@@ -239,6 +260,123 @@ export default function BoostleLabelsPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">
+              Pricing
+            </p>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+              Start free, upgrade when you want more control
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-slate-600">
+              Boostle: Labels is designed to be easy to try and simple to grow
+              with. Start with the free plan, then unlock customisation when
+              you are ready.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 lg:grid-cols-2">
+            <article className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-500">
+                    Free
+                  </p>
+                  <h3 className="mt-3 text-2xl font-semibold text-slate-950">
+                    Get started with the core experience
+                  </h3>
+                </div>
+
+                <div className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-600">
+                  Free to install
+                </div>
+              </div>
+
+              <p className="mt-5 text-base leading-7 text-slate-600">
+                Ideal for merchants who want to add urgency fast with default
+                settings and minimal setup.
+              </p>
+
+              <div className="mt-8 text-4xl font-bold tracking-tight text-slate-950">
+                $0
+              </div>
+              <p className="mt-2 text-sm text-slate-500">No monthly cost</p>
+
+              <ul className="mt-8 grid gap-3">
+                {freePlanFeatures.map((feature) => (
+                  <li
+                    key={feature}
+                    className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700"
+                  >
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="https://apps.shopify.com/boostle-labels"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-flex rounded-2xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-white"
+              >
+                Start free
+              </a>
+            </article>
+
+            <article className="rounded-[2rem] border border-blue-200 bg-blue-50 p-8 shadow-sm ring-1 ring-blue-100">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.12em] text-blue-700">
+                    Starter
+                  </p>
+                  <h3 className="mt-3 text-2xl font-semibold text-slate-950">
+                    Unlock branding control and custom settings
+                  </h3>
+                </div>
+
+                <div className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-blue-700">
+                  Most flexible
+                </div>
+              </div>
+
+              <p className="mt-5 text-base leading-7 text-slate-700">
+                Best for merchants who want Boostle: Labels to match their store
+                more closely and remove the default branding.
+              </p>
+
+              <div className="mt-8 flex items-end gap-2">
+                <span className="text-4xl font-bold tracking-tight text-slate-950">
+                  $4.99
+                </span>
+                <span className="pb-1 text-sm text-slate-600">USD / month</span>
+              </div>
+              <p className="mt-2 text-sm text-slate-500">7-day free trial</p>
+
+              <ul className="mt-8 grid gap-3">
+                {starterPlanFeatures.map((feature) => (
+                  <li
+                    key={feature}
+                    className="rounded-2xl border border-blue-200 bg-white px-4 py-3 text-sm font-medium text-slate-700"
+                  >
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="https://apps.shopify.com/boostle-labels"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-flex rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-blue-700"
+              >
+                Start 7-day trial
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-black/5 bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">
               Setup
             </p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
@@ -291,7 +429,7 @@ export default function BoostleLabelsPage() {
                 href="https://apps.shopify.com/boostle-labels"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-2xl bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+                className="rounded-2xl bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-600"
               >
                 Install on Shopify
               </a>
