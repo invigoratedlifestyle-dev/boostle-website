@@ -1,3 +1,7 @@
+import Link from "next/link";
+import { Footer } from "../components/site/footer";
+import { Navbar } from "../components/site/navbar";
+
 const features = [
   {
     title: "Conversion-focused by design",
@@ -12,7 +16,7 @@ const features = [
   {
     title: "Built for a growing ecosystem",
     description:
-      "Boostle starts with urgency and support tools, with room to expand into a broader app suite over time.",
+      "Boostle starts with urgency and expands into tools that help merchants support, optimise, and grow their stores.",
   },
 ];
 
@@ -21,7 +25,8 @@ const apps = [
     name: "Boostle: Labels",
     status: "Available now",
     description:
-      "Show low stock and urgency labels on product pages to help shoppers act faster and convert with more confidence.",
+      "Low-stock and urgency labels for Shopify product pages, designed to help shoppers act faster.",
+    href: "/apps/labels",
     cta: "View app",
   },
   {
@@ -29,39 +34,15 @@ const apps = [
     status: "Coming soon",
     description:
       "A future support and ticketing experience designed to help merchants manage customer enquiries more efficiently.",
-    cta: "Join waitlist",
+    href: "/contact",
+    cta: "Contact us",
   },
 ];
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-      <header className="border-b border-black/5 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-          <a href="#" className="text-xl font-semibold tracking-tight">
-            Boostle
-          </a>
-
-          <nav className="hidden items-center gap-8 text-sm text-slate-600 md:flex">
-            <a href="#apps" className="transition hover:text-slate-900">
-              Apps
-            </a>
-            <a href="#why-boostle" className="transition hover:text-slate-900">
-              Why Boostle
-            </a>
-            <a href="#contact" className="transition hover:text-slate-900">
-              Contact
-            </a>
-          </nav>
-
-          <a
-            href="#apps"
-            className="rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:opacity-90"
-          >
-            Explore
-          </a>
-        </div>
-      </header>
+      <Navbar />
 
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.18),transparent_40%)]" />
@@ -72,29 +53,28 @@ export default function Home() {
             </div>
 
             <h1 className="mt-6 max-w-3xl text-5xl font-bold tracking-tight text-slate-950 sm:text-6xl">
-              Build more momentum for every product page.
+              Turn passive visitors into buyers with urgency that works.
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-              Boostle creates focused Shopify apps that help merchants improve
-              urgency, sharpen the storefront experience, and increase
-              conversions without unnecessary complexity.
+              Boostle: Labels shows real-time stock urgency exactly where it
+              matters — between price and the buy button.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="#apps"
+              <Link
+                href="/apps/labels"
                 className="rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
               >
-                View Boostle apps
-              </a>
+                View Boostle: Labels
+              </Link>
 
-              <a
-                href="#why-boostle"
+              <Link
+                href="/contact"
                 className="rounded-2xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
               >
-                Why merchants choose Boostle
-              </a>
+                Contact Boostle
+              </Link>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-6 text-sm text-slate-500">
@@ -143,7 +123,10 @@ export default function Home() {
                         </p>
                       </div>
 
-                      <button className="rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white">
+                      <button
+                        type="button"
+                        className="rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white"
+                      >
                         Add to cart
                       </button>
                     </div>
@@ -160,7 +143,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="apps" className="border-t border-black/5 bg-white py-24">
+      <section className="border-t border-black/5 bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">
@@ -195,22 +178,19 @@ export default function Home() {
                   {app.description}
                 </p>
 
-                <a
-                  href="#contact"
+                <Link
+                  href={app.href}
                   className="mt-8 inline-flex rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
                 >
                   {app.cta}
-                </a>
+                </Link>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section
-        id="why-boostle"
-        className="border-t border-black/5 bg-slate-50 py-24"
-      >
+      <section className="border-t border-black/5 bg-slate-50 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">
@@ -243,7 +223,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="border-t border-black/5 bg-white py-24">
+      <section className="border-t border-black/5 bg-white py-24">
         <div className="mx-auto max-w-5xl px-6">
           <div className="rounded-[2rem] border border-slate-200 bg-slate-950 px-8 py-12 text-white shadow-[0_20px_80px_rgba(15,23,42,0.18)] sm:px-12">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
@@ -258,40 +238,24 @@ export default function Home() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="#apps"
+              <Link
+                href="/apps/labels"
                 className="rounded-2xl bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
               >
-                Explore apps
-              </a>
-              <a
-                href="mailto:hello@boostle.pro"
+                Explore Boostle: Labels
+              </Link>
+              <Link
+                href="/contact"
                 className="rounded-2xl border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/5"
               >
                 Contact Boostle
-              </a>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <footer className="border-t border-black/5 bg-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Boostle. All rights reserved.</p>
-
-          <div className="flex flex-wrap gap-6">
-            <a href="#apps" className="transition hover:text-slate-900">
-              Apps
-            </a>
-            <a href="#why-boostle" className="transition hover:text-slate-900">
-              Why Boostle
-            </a>
-            <a href="mailto:hello@boostle.pro" className="transition hover:text-slate-900">
-              Contact
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
