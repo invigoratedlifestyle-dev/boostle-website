@@ -255,6 +255,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="border-t border-black/5 bg-slate-950 py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="rounded-[2rem] border border-white/10 bg-slate-900 px-8 py-12 text-white shadow-[0_20px_80px_rgba(15,23,42,0.5)] sm:px-12">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
+              Boostle: Labels
+            </p>
+
+            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+              Turn hesitation into action with simple urgency
+            </h2>
+
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
+              Add low-stock urgency exactly where it matters — between price and
+              the buy button — and help shoppers make faster buying decisions.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/apps/labels"
+                className="rounded-2xl bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-600"
+              >
+                View Boostle: Labels
+              </Link>
+
+              <a
+                href="https://apps.shopify.com/boostle-labels"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-2xl border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/5"
+              >
+                Install on Shopify
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </main>
   );
