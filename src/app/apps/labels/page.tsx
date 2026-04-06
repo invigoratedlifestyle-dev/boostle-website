@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Footer } from "../../../components/site/footer";
 import { Navbar } from "../../../components/site/navbar";
@@ -119,7 +120,7 @@ export default function BoostleLabelsPage() {
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="text-sm font-medium text-slate-500">
-                      Product page example
+                      Real storefront example
                     </p>
                     <h2 className="mt-1 text-2xl font-semibold text-slate-950">
                       Urgency placed where shoppers actually see it
@@ -131,39 +132,22 @@ export default function BoostleLabelsPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <div className="aspect-[4/3] rounded-2xl border border-slate-200 bg-[linear-gradient(135deg,#f8fafc,#e2e8f0)]" />
-
-                  <div className="mt-6">
-                    <p className="text-sm text-slate-500">Product</p>
-                    <p className="mt-1 text-xl font-semibold text-slate-950">
-                      Cozy Beige Slippers
-                    </p>
+                <div className="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+                  <div className="relative aspect-[4/3] w-full bg-slate-100">
+                    <Image
+                      src="\public\images\boostle-labels-demo.png"
+                      alt="Boostle Labels shown on a Shopify product page between the product price and add to cart button"
+                      fill
+                      className="object-cover object-top"
+                      priority
+                    />
                   </div>
-
-                  <div className="mt-5">
-                    <p className="text-sm text-slate-500">Price</p>
-                    <p className="mt-1 text-3xl font-semibold text-slate-950">
-                      $39.95
-                    </p>
-                  </div>
-
-                  <div className="mt-5 inline-flex rounded-full bg-amber-100 px-4 py-2 text-sm font-semibold text-amber-800">
-                    Only 3 left
-                  </div>
-
-                  <button
-                    type="button"
-                    className="mt-5 w-full rounded-2xl bg-slate-900 px-5 py-4 text-sm font-semibold text-white"
-                  >
-                    Add to cart
-                  </button>
-
-                  <p className="mt-4 text-sm leading-6 text-slate-600">
-                    This is the key placement: price first, urgency second, buy
-                    action immediately after.
-                  </p>
                 </div>
+
+                <p className="mt-6 text-sm leading-6 text-slate-600">
+                  This is the key placement: price first, urgency second, buy
+                  action immediately after.
+                </p>
               </div>
             </div>
           </div>
