@@ -74,6 +74,29 @@ const starterPlanFeatures = [
   "7-day trial, then $4.99/month USD",
 ];
 
+const faqs = [
+  {
+    question: "Do I need to write code to use Boostle: Labels?",
+    answer:
+      "No. Boostle: Labels is designed for Shopify merchants using the theme editor. Install the app, add the app block, and position it above the buy buttons.",
+  },
+  {
+    question: "Where do the labels appear?",
+    answer:
+      "The ideal placement is between the product price and the add to cart button. That is the position Boostle is designed around because it creates urgency at the moment of decision.",
+  },
+  {
+    question: "Can I remove the Powered by Boostle: Labels branding?",
+    answer:
+      "Yes. Branding removal is available on the Starter plan along with custom thresholds, custom colours, and custom label text.",
+  },
+  {
+    question: "Can I preview premium settings before upgrading?",
+    answer:
+      "Yes. The free experience is designed to let merchants preview premium settings before upgrading, which makes it easier to see how Boostle will fit their storefront.",
+  },
+];
+
 export default function BoostleLabelsPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
@@ -369,6 +392,37 @@ export default function BoostleLabelsPage() {
                 Start 7-day trial
               </a>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-black/5 bg-slate-50 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">
+              FAQ
+            </p>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+              Common questions before you install
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-slate-600">
+              A few quick answers to reduce setup friction and make the next
+              step easier.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
+            {faqs.map((faq) => (
+              <article
+                key={faq.question}
+                className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm"
+              >
+                <h3 className="text-xl font-semibold text-slate-950">
+                  {faq.question}
+                </h3>
+                <p className="mt-4 leading-7 text-slate-600">{faq.answer}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
