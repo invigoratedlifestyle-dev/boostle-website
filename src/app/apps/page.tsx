@@ -16,6 +16,7 @@ const apps = [
     ],
     href: "/apps/labels",
     cta: "View app",
+    install: "https://apps.shopify.com/boostle-labels",
   },
   {
     name: "Boostle Support",
@@ -61,7 +62,7 @@ export default function AppsPage() {
               key={app.name}
               className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm"
             >
-              <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+              <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                 <div className="max-w-3xl">
                   <div className="flex items-center gap-3">
                     <h2 className="text-2xl font-semibold text-slate-950">
@@ -88,17 +89,66 @@ export default function AppsPage() {
                   </ul>
                 </div>
 
-                <div className="flex shrink-0">
+                <div className="flex flex-col gap-3 shrink-0">
                   <Link
                     href={app.href}
                     className="rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
                   >
                     {app.cta}
                   </Link>
+
+                  {"install" in app && app.install && (
+                    <a
+                      href={app.install}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-2xl border border-blue-200 bg-blue-50 px-5 py-3 text-sm font-semibold text-blue-700 transition hover:bg-blue-100 text-center"
+                    >
+                      Install on Shopify
+                    </a>
+                  )}
                 </div>
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      {/* 🔥 New conversion CTA */}
+      <section className="border-t border-black/5 bg-slate-950 py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="rounded-[2rem] border border-white/10 bg-slate-900 px-8 py-12 text-white shadow-[0_20px_80px_rgba(15,23,42,0.5)] sm:px-12">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
+              Boostle: Labels
+            </p>
+
+            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+              Add urgency to your product pages in minutes
+            </h2>
+
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
+              Place low-stock messaging exactly where it matters — between price
+              and the buy button — and help shoppers act faster.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/apps/labels"
+                className="rounded-2xl bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-600"
+              >
+                View Boostle: Labels
+              </Link>
+
+              <a
+                href="https://apps.shopify.com/boostle-labels"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-2xl border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/5"
+              >
+                Install on Shopify
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
