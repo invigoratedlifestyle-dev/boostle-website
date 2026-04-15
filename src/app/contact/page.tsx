@@ -84,7 +84,7 @@ export default function ContactPage() {
                   href="mailto:support@boostle.pro"
                   className="mt-2 inline-block text-lg font-semibold text-slate-950 transition hover:text-blue-600"
                 >
-                  hello@boostle.pro
+                  support@boostle.pro
                 </a>
               </div>
             </div>
