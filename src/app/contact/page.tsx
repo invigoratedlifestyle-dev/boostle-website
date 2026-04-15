@@ -81,7 +81,7 @@ export default function ContactPage() {
                 <p className="text-sm font-medium text-slate-500">Email</p>
 
                 <a
-                  href="mailto:hello@boostle.pro"
+                  href="mailto:support@boostle.pro"
                   className="mt-2 inline-block text-lg font-semibold text-slate-950 transition hover:text-blue-600"
                 >
                   hello@boostle.pro
