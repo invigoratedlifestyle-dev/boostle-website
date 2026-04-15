@@ -1,227 +1,215 @@
-import { TrackLink } from "../components/analytics/track-link";
+import Link from "next/link";
 import { Footer } from "../components/site/footer";
 import { Navbar } from "../components/site/navbar";
 
-const features = [
+const featureCards = [
   {
-    title: "Conversion-focused by design",
+    title: "Increase buying momentum",
     description:
-      "Every Boostle app is built to support better buying behaviour, clearer decisions, and more action from shoppers.",
+      "Show low-stock and urgency labels where they matter most so shoppers feel the decision is clearer and easier to make.",
   },
   {
-    title: "Lightweight and merchant-friendly",
+    title: "Built for Shopify stores",
     description:
-      "Simple setup, clean storefront integration, and practical features that work without bloating the theme.",
+      "Boostle: Labels is designed to fit naturally into product pages without adding unnecessary friction or clutter.",
   },
   {
-    title: "Built for a growing ecosystem",
+    title: "Fast to launch",
     description:
-      "Boostle starts with urgency and expands into tools that help merchants support, optimise, and grow their stores.",
+      "Install the app, add the block, and start showing stock-driven labels in your storefront experience.",
   },
 ];
 
-const apps = [
+const labelExamples = [
+  "Only 3 left",
+  "Low stock",
+  "Selling fast",
+  "Sold out",
+];
+
+const steps = [
   {
-    name: "Boostle: Labels",
+    title: "Install Boostle: Labels",
+    description:
+      "Add the app to your Shopify store and open the app settings.",
+  },
+  {
+    title: "Add the app block",
+    description:
+      "Place the label block on your product page where shoppers are already deciding whether to buy.",
+  },
+  {
+    title: "Turn stock into action",
+    description:
+      "Show urgency and low-stock messaging that helps visitors act with more confidence.",
+  },
+];
+
+const ecosystemCards = [
+  {
+    title: "Boostle: Labels",
     status: "Available now",
     description:
-      "Low-stock and urgency labels for Shopify product pages, designed to help shoppers act faster.",
+      "A lightweight Shopify app designed to make product page decisions clearer with low-stock and urgency labels.",
     href: "/apps/labels",
     cta: "View app",
   },
   {
-    name: "Boostle Support",
-    status: "Coming soon",
+    title: "Boostle dashboard",
+    status: "Live",
     description:
-      "A future support and ticketing experience designed to help merchants manage customer enquiries more efficiently.",
+      "Access the Boostle app experience, support flows, and the growing product ecosystem.",
+    href: "/app",
+    cta: "Open dashboard",
+  },
+  {
+    title: "Boostle Support",
+    status: "Growing",
+    description:
+      "A cleaner support and ticket workflow designed to help merchants get answers and resolve issues faster.",
     href: "/contact",
-    cta: "Contact us",
+    cta: "Contact Boostle",
   },
 ];
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+    <main className="min-h-screen bg-white text-slate-900">
       <Navbar />
 
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.18),transparent_40%)]" />
-        <div className="mx-auto grid min-h-[calc(100vh-81px)] max-w-7xl items-center gap-14 px-6 py-20 md:grid-cols-2">
-          <div className="relative z-10">
-            <div className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700">
-              Shopify apps built for growth
-            </div>
+      <section className="border-b border-black/5 bg-[radial-gradient(circle_at_top,_#eff6ff,_#ffffff_45%,_#f8fafc_100%)]">
+        <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24">
+          <div className="grid gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">
+                Shopify apps built to increase conversions
+              </p>
 
-            <h1 className="mt-6 max-w-3xl text-5xl font-bold tracking-tight text-slate-950 sm:text-6xl">
-              Turn passive visitors into buyers with urgency that works.
-            </h1>
+              <h1 className="mt-5 max-w-4xl text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+                Turn product page hesitation into action with Boostle: Labels
+              </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-              Boostle: Labels shows real-time stock urgency exactly where it
-              matters — between price and the buy button.
-            </p>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+                Boostle builds lightweight Shopify apps designed to improve the
+                customer journey. Boostle: Labels helps stores show low-stock
+                and urgency messaging directly on product pages, right where
+                buying decisions happen.
+              </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <TrackLink
-                href="/apps/labels"
-                eventName="homepage_view_labels_click"
-                eventLabel="homepage_hero_view_labels"
-                className="rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
-              >
-                View Boostle: Labels
-              </TrackLink>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <Link
+                  href="/apps/labels"
+                  className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+                >
+                  View Boostle: Labels
+                </Link>
 
-              <TrackLink
-                href="/contact"
-                eventName="homepage_contact_click"
-                eventLabel="homepage_hero_contact"
-                className="rounded-2xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
-              >
-                Contact Boostle
-              </TrackLink>
-            </div>
+                <Link
+                  href="/app"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+                >
+                  Open dashboard
+                </Link>
+              </div>
 
-            <div className="mt-10 flex flex-wrap gap-6 text-sm text-slate-500">
-              <span>Lightweight UX</span>
-              <span>Conversion-focused</span>
-              <span>Built for Shopify growth</span>
-            </div>
-          </div>
-
-          <div className="relative z-10">
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)]">
-              <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-6">
-                <div className="mb-4 text-sm font-medium text-slate-500">
-                  Featured app
-                </div>
-
-                <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <div className="flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-sm font-medium text-blue-600">
-                        Boostle: Labels
-                      </p>
-                      <h2 className="mt-1 text-2xl font-semibold text-slate-950">
-                        Increase conversions with urgency labels
-                      </h2>
-                    </div>
-
-                    <div className="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-700">
-                      Only 3 left
-                    </div>
-                  </div>
-
-                  <div className="mt-8 space-y-4 rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                    <div>
-                      <p className="text-sm text-slate-500">Product</p>
-                      <p className="mt-1 font-medium text-slate-900">
-                        Cozy Beige Slippers
-                      </p>
-                    </div>
-
-                    <div className="flex items-end justify-between gap-4">
-                      <div>
-                        <p className="text-sm text-slate-500">Price</p>
-                        <p className="mt-1 text-2xl font-semibold text-slate-950">
-                          $39.95
-                        </p>
-                      </div>
-
-                      <button
-                        type="button"
-                        className="rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white"
-                      >
-                        Add to cart
-                      </button>
-                    </div>
-                  </div>
-
-                  <p className="mt-6 text-sm leading-6 text-slate-600">
-                    Place urgency where it matters most: between price and the
-                    buy action.
-                  </p>
-                </div>
+              <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-600">
+                <span className="rounded-full border border-slate-200 bg-white px-4 py-2">
+                  Low-stock urgency labels
+                </span>
+                <span className="rounded-full border border-slate-200 bg-white px-4 py-2">
+                  Shopify-friendly setup
+                </span>
+                <span className="rounded-full border border-slate-200 bg-white px-4 py-2">
+                  Cleaner buying decisions
+                </span>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="border-t border-black/5 bg-white py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">
-              Apps
-            </p>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-              Built to solve practical problems for Shopify merchants
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-slate-600">
-              The Boostle ecosystem starts with conversion tools and expands
-              into apps that help merchants support, optimise, and grow their
-              stores more effectively.
-            </p>
-          </div>
-
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {apps.map((app) => (
-              <article
-                key={app.name}
-                className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm"
-              >
+            <div className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] sm:p-8">
+              <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
                 <div className="flex items-center justify-between gap-4">
-                  <h3 className="text-2xl font-semibold text-slate-950">
-                    {app.name}
-                  </h3>
-                  <span className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-600">
-                    {app.status}
+                  <div>
+                    <p className="text-sm font-medium text-slate-500">
+                      Boostle: Labels
+                    </p>
+                    <h2 className="mt-1 text-xl font-semibold text-slate-950">
+                      Example product page moment
+                    </h2>
+                  </div>
+
+                  <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700">
+                    Live app
                   </span>
                 </div>
 
-                <p className="mt-5 text-base leading-7 text-slate-600">
-                  {app.description}
-                </p>
+                <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5">
+                  <p className="text-sm font-medium text-slate-500">
+                    Product page
+                  </p>
 
-                <TrackLink
-                  href={app.href}
-                  eventName="homepage_app_card_click"
-                  eventLabel={`homepage_app_card_${app.name.toLowerCase().replace(/[^a-z0-9]+/g, "_")}`}
-                  className="mt-8 inline-flex rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
-                >
-                  {app.cta}
-                </TrackLink>
-              </article>
-            ))}
+                  <div className="mt-4 space-y-3">
+                    <div className="h-6 w-2/3 rounded-lg bg-slate-200" />
+                    <div className="h-4 w-1/3 rounded-lg bg-slate-100" />
+                    <div className="h-10 w-32 rounded-full bg-slate-900" />
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <span className="rounded-full bg-red-50 px-3 py-2 text-sm font-semibold text-red-700">
+                      Only 3 left
+                    </span>
+                    <span className="rounded-full bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-700">
+                      Low stock
+                    </span>
+                  </div>
+
+                  <p className="mt-5 text-sm leading-6 text-slate-600">
+                    Place urgency labels between price and add to cart so the
+                    message appears exactly where shoppers are deciding.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {labelExamples.map((label) => (
+                  <div
+                    key={label}
+                    className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-medium text-slate-700"
+                  >
+                    {label}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="border-t border-black/5 bg-slate-50 py-24">
+      <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">
-              Why Boostle
+              Why it works
             </p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-              A focused approach beats feature bloat
+              Built to support clearer buying decisions
             </h2>
-            <p className="mt-4 text-lg leading-8 text-slate-600">
-              Boostle is designed around focused outcomes. Clear value,
-              practical setup, and storefront experiences that support action.
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Boostle: Labels helps merchants add subtle urgency and stock
+              visibility without overwhelming the product page.
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {features.map((feature) => (
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {featureCards.map((item) => (
               <div
-                key={feature.title}
+                key={item.title}
                 className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm"
               >
                 <h3 className="text-xl font-semibold text-slate-950">
-                  {feature.title}
+                  {item.title}
                 </h3>
                 <p className="mt-4 leading-7 text-slate-600">
-                  {feature.description}
+                  {item.description}
                 </p>
               </div>
             ))}
@@ -229,78 +217,133 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-black/5 bg-white py-24">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="rounded-[2rem] border border-slate-200 bg-slate-950 px-8 py-12 text-white shadow-[0_20px_80px_rgba(15,23,42,0.18)] sm:px-12">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
-              Get started
-            </p>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-              Start with Boostle: Labels and grow from there
-            </h2>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
-              Explore the first Boostle app today and follow the growth of the
-              wider Boostle ecosystem as new tools are released.
-            </p>
+      <section className="border-y border-black/5 bg-slate-50 py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">
+                How it works
+              </p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+                A simple path from install to live product page labels
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                Keep the setup light, the placement intentional, and the
+                customer experience focused.
+              </p>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <TrackLink
-                href="/apps/labels"
-                eventName="homepage_mid_cta_click"
-                eventLabel="homepage_mid_cta_explore_labels"
-                className="rounded-2xl bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
-              >
-                Explore Boostle: Labels
-              </TrackLink>
-              <TrackLink
-                href="/contact"
-                eventName="homepage_mid_contact_click"
-                eventLabel="homepage_mid_cta_contact"
-                className="rounded-2xl border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/5"
-              >
-                Contact Boostle
-              </TrackLink>
+              <div className="mt-8">
+                <Link
+                  href="/apps/labels"
+                  className="inline-flex rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+                >
+                  Learn more about Boostle: Labels
+                </Link>
+              </div>
+            </div>
+
+            <div className="grid gap-4">
+              {steps.map((step, index) => (
+                <div
+                  key={step.title}
+                  className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white">
+                      {index + 1}
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-semibold text-slate-950">
+                        {step.title}
+                      </h3>
+                      <p className="mt-2 leading-7 text-slate-600">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-t border-black/5 bg-slate-950 py-20">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="rounded-[2rem] border border-white/10 bg-slate-900 px-8 py-12 text-white shadow-[0_20px_80px_rgba(15,23,42,0.5)] sm:px-12">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
-              Boostle: Labels
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">
+              The Boostle ecosystem
             </p>
-
-            <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-              Turn hesitation into action with simple urgency
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+              More than one app. A growing merchant toolkit.
             </h2>
-
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
-              Add low-stock urgency exactly where it matters — between price and
-              the buy button — and help shoppers make faster buying decisions.
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Boostle starts with conversion-focused Shopify apps and expands
+              into support, workflow, and merchant-friendly tooling over time.
             </p>
+          </div>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <TrackLink
-                href="/apps/labels"
-                eventName="homepage_final_view_labels_click"
-                eventLabel="homepage_final_cta_view_labels"
-                className="rounded-2xl bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-600"
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {ecosystemCards.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm"
               >
-                View Boostle: Labels
-              </TrackLink>
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="text-xl font-semibold text-slate-950">
+                    {item.title}
+                  </h3>
+                  <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
+                    {item.status}
+                  </span>
+                </div>
 
-              <TrackLink
-                href="https://apps.shopify.com/boostle-labels"
-                eventName="homepage_final_install_click"
-                eventLabel="homepage_final_cta_install_shopify"
-                external
-                className="rounded-2xl border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/5"
-              >
-                Install on Shopify
-              </TrackLink>
-            </div>
+                <p className="mt-4 leading-7 text-slate-600">
+                  {item.description}
+                </p>
+
+                <Link
+                  href={item.href}
+                  className="mt-6 inline-flex text-sm font-semibold text-slate-950 transition hover:opacity-70"
+                >
+                  {item.cta} →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-black/5 bg-slate-900 py-20 text-white">
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
+            Ready to explore Boostle?
+          </p>
+
+          <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+            Start with Boostle: Labels
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+            Explore the app, see how it fits your product pages, and step into
+            the growing Boostle ecosystem.
+          </p>
+
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              href="/apps/labels"
+              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:opacity-90"
+            >
+              View Boostle: Labels
+            </Link>
+
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/5"
+            >
+              Contact Boostle
+            </Link>
           </div>
         </div>
       </section>
