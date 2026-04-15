@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TrackLink } from "../../components/analytics/track-link";
 import { Footer } from "../../components/site/footer";
 import { Navbar } from "../../components/site/navbar";
 
@@ -89,23 +89,26 @@ export default function AppsPage() {
                   </ul>
                 </div>
 
-                <div className="flex flex-col gap-3 shrink-0">
-                  <Link
+                <div className="flex shrink-0 flex-col gap-3">
+                  <TrackLink
                     href={app.href}
+                    eventName="apps_page_view_click"
+                    eventLabel={`apps_page_view_${app.name.toLowerCase().replace(/[^a-z0-9]+/g, "_")}`}
                     className="rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
                   >
                     {app.cta}
-                  </Link>
+                  </TrackLink>
 
                   {"install" in app && app.install && (
-                    <a
+                    <TrackLink
                       href={app.install}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="rounded-2xl border border-blue-200 bg-blue-50 px-5 py-3 text-sm font-semibold text-blue-700 transition hover:bg-blue-100 text-center"
+                      eventName="apps_page_install_click"
+                      eventLabel="apps_page_install_boostle_labels"
+                      external
+                      className="rounded-2xl border border-blue-200 bg-blue-50 px-5 py-3 text-center text-sm font-semibold text-blue-700 transition hover:bg-blue-100"
                     >
                       Install on Shopify
-                    </a>
+                    </TrackLink>
                   )}
                 </div>
               </div>
@@ -114,7 +117,6 @@ export default function AppsPage() {
         </div>
       </section>
 
-      {/* 🔥 New conversion CTA */}
       <section className="border-t border-black/5 bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-6">
           <div className="rounded-[2rem] border border-white/10 bg-slate-900 px-8 py-12 text-white shadow-[0_20px_80px_rgba(15,23,42,0.5)] sm:px-12">
@@ -132,21 +134,24 @@ export default function AppsPage() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link
+              <TrackLink
                 href="/apps/labels"
+                eventName="apps_page_final_view_click"
+                eventLabel="apps_page_final_cta_view_labels"
                 className="rounded-2xl bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-600"
               >
                 View Boostle: Labels
-              </Link>
+              </TrackLink>
 
-              <a
+              <TrackLink
                 href="https://apps.shopify.com/boostle-labels"
-                target="_blank"
-                rel="noreferrer"
+                eventName="apps_page_final_install_click"
+                eventLabel="apps_page_final_cta_install_shopify"
+                external
                 className="rounded-2xl border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/5"
               >
                 Install on Shopify
-              </a>
+              </TrackLink>
             </div>
           </div>
         </div>

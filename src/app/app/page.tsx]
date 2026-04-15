@@ -1,0 +1,48 @@
+// app/app/page.tsx
+
+export default function AppHome() {
+  return (
+    <main className="min-h-screen bg-white flex items-center justify-center px-6">
+      <div className="max-w-xl text-center">
+        {/* Logo / Brand */}
+        <div className="mb-6">
+          <div className="text-3xl font-semibold tracking-tight">
+            Boostle
+          </div>
+        </div>
+
+        {/* Headline */}
+        <h1 className="text-2xl sm:text-3xl font-semibold mb-4">
+          Boostle App Dashboard
+        </h1>
+
+        {/* Subtext */}
+        <p className="text-gray-600 mb-8">
+          Support, tickets, and tools for your Boostle apps are coming soon.
+        </p>
+
+        {/* CTA */}
+        <div className="flex items-center justify-center gap-4">
+          <a
+            href="https://boostle.pro"
+            className="px-5 py-3 rounded-full bg-black text-white text-sm font-medium hover:opacity-90 transition"
+          >
+            Back to website
+          </a>
+
+          <a
+            href="mailto:support@boostle.pro"
+            className="px-5 py-3 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-50 transition"
+          >
+            Contact support
+          </a>
+        </div>
+
+        {/* Footer note */}
+        <p className="text-xs text-gray-400 mt-10">
+          © {new Date().getFullYear()} Boostle
+        </p>
+      </div>
+    </main>
+  );
+}

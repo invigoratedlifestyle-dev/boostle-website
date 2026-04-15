@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { TrackLink } from "../components/analytics/track-link";
 import { Footer } from "../components/site/footer";
 import { Navbar } from "../components/site/navbar";
 
@@ -62,19 +62,23 @@ export default function HomePage() {
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link
+              <TrackLink
                 href="/apps/labels"
+                eventName="homepage_view_labels_click"
+                eventLabel="homepage_hero_view_labels"
                 className="rounded-2xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
               >
                 View Boostle: Labels
-              </Link>
+              </TrackLink>
 
-              <Link
+              <TrackLink
                 href="/contact"
+                eventName="homepage_contact_click"
+                eventLabel="homepage_hero_contact"
                 className="rounded-2xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
               >
                 Contact Boostle
-              </Link>
+              </TrackLink>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-6 text-sm text-slate-500">
@@ -178,12 +182,14 @@ export default function HomePage() {
                   {app.description}
                 </p>
 
-                <Link
+                <TrackLink
                   href={app.href}
+                  eventName="homepage_app_card_click"
+                  eventLabel={`homepage_app_card_${app.name.toLowerCase().replace(/[^a-z0-9]+/g, "_")}`}
                   className="mt-8 inline-flex rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
                 >
                   {app.cta}
-                </Link>
+                </TrackLink>
               </article>
             ))}
           </div>
@@ -238,18 +244,22 @@ export default function HomePage() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link
+              <TrackLink
                 href="/apps/labels"
+                eventName="homepage_mid_cta_click"
+                eventLabel="homepage_mid_cta_explore_labels"
                 className="rounded-2xl bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
               >
                 Explore Boostle: Labels
-              </Link>
-              <Link
+              </TrackLink>
+              <TrackLink
                 href="/contact"
+                eventName="homepage_mid_contact_click"
+                eventLabel="homepage_mid_cta_contact"
                 className="rounded-2xl border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/5"
               >
                 Contact Boostle
-              </Link>
+              </TrackLink>
             </div>
           </div>
         </div>
@@ -272,21 +282,24 @@ export default function HomePage() {
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link
+              <TrackLink
                 href="/apps/labels"
+                eventName="homepage_final_view_labels_click"
+                eventLabel="homepage_final_cta_view_labels"
                 className="rounded-2xl bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-600"
               >
                 View Boostle: Labels
-              </Link>
+              </TrackLink>
 
-              <a
+              <TrackLink
                 href="https://apps.shopify.com/boostle-labels"
-                target="_blank"
-                rel="noreferrer"
+                eventName="homepage_final_install_click"
+                eventLabel="homepage_final_cta_install_shopify"
+                external
                 className="rounded-2xl border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/5"
               >
                 Install on Shopify
-              </a>
+              </TrackLink>
             </div>
           </div>
         </div>

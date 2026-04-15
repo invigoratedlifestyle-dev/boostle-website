@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { TrackLink } from "../../../components/analytics/track-link";
 import { Footer } from "../../../components/site/footer";
 import { Navbar } from "../../../components/site/navbar";
 

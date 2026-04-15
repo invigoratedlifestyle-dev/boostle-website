@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "../components/analytics/google-analytics";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -12,9 +13,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId =
+    process.env.NEXT_PUBLIC_GA_ID || "G-FJEPSFJQ6F";
+
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
+      </body>
     </html>
   );
 }
