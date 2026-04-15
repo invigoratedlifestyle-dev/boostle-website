@@ -29,12 +29,24 @@ export function Navbar() {
           ))}
         </nav>
 
-        <Link
-          href="/apps"
-          className="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
-        >
-          Explore apps
-        </Link>
+        {/* Right side CTAs */}
+        <div className="flex items-center gap-3">
+          {/* Secondary CTA */}
+          <Link
+            href="/apps"
+            className="hidden sm:inline-flex rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
+          >
+            Explore apps
+          </Link>
+
+          {/* Primary CTA */}
+          <Link
+            href="/app"
+            className="inline-flex rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:opacity-90"
+          >
+            Dashboard
+          </Link>
+        </div>
       </div>
     </header>
   );
